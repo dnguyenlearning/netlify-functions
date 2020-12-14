@@ -1,8 +1,9 @@
-exports.handler = async (event) => {
-  const subject = event.queryStringParameters.name || "World";
+const packageJson = require("../package.json");
 
+exports.handler = async (event) => {
+  const version = packageJson?.version;
   return {
     statusCode: 200,
-    body: `Hello ${subject} - ${process.env.APP_TARGET}!`,
+    body: version,
   };
 };
