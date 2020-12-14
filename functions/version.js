@@ -1,4 +1,3 @@
-var readJson = require("read-package-json");
 const fs = require("fs");
 
 exports.handler = async (event, context, callback) => {
