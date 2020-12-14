@@ -1,5 +1,5 @@
 const fs = require("fs");
-const jsonFilePath = "../package.json";
+const jsonFilePath = "/package.json";
 
 exports.handler = async (event, context, callback) => {
   const packageJson = await fs.readFileSync(jsonFilePath, "utf8");
