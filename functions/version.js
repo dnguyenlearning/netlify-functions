@@ -1,7 +1,8 @@
-const packageJson = require("../package.json");
+import packageJSON from "../package.json";
 
 exports.handler = async (event) => {
-  const version = packageJson?.version;
+  console.log("event", event);
+  const version = packageJSON?.version;
   return {
     statusCode: 200,
     body: version,
