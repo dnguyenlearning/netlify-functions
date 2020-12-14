@@ -1,11 +1,8 @@
-const packageJson = require("../package.json");
+const shared = require("./shared");
 
 exports.handler = async (event) => {
-  console.log("packageJson", packageJson);
-  console.log("event", event);
-  const version = packageJson?.version;
   return {
     statusCode: 200,
-    body: version,
+    body: shared.VERSION,
   };
 };
