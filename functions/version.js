@@ -1,8 +1,10 @@
-const shared = require("./shared");
+exports.handler = async (event, context, callback) => {
+  console.log("event", event);
+  console.log("context", context);
+  console.log("callback", callback);
 
-exports.handler = async (event) => {
   return {
     statusCode: 200,
-    body: shared.VERSION,
+    body: "0.0.1",
   };
 };
