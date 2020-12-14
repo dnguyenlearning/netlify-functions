@@ -1,7 +1,7 @@
+const packageJson = require("/package.json");
+
 exports.handler = async (event, context, callback) => {
-  console.log("event", event);
-  console.log("context", context);
-  console.log("callback", callback);
+  console.log("packageJson", packageJson);
 
   return {
     statusCode: 200,
