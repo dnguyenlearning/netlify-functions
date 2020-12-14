@@ -1,13 +1,18 @@
-const fs = require("fs");
-const jsonFilePath = "/package.json";
+var readJson = require("read-package-json");
 
 exports.handler = async (event, context, callback) => {
-  const packageJson = await fs.readFileSync(jsonFilePath, "utf8");
+  readJson("../package.json", console.error, false, function (er, data) {
+    if (er) {
+      return {
+        statusCode: 400,
+        body: "Wrong",
+      };
+    }
 
-  console.log("packageJson", packageJson);
-
-  return {
-    statusCode: 200,
-    body: "0.0.1",
-  };
+    console.log("data", data);
+    return {
+      statusCode: 200,
+      body: "0.0.1",
+    };
+  });
 };
