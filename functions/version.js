@@ -3,7 +3,7 @@ const fs = require("fs");
 exports.handler = async (event, context, callback) => {
   try {
     const packageJSON = await fs.readFileSync(
-      __dirname + "/package.json",
+      __dirname + "/../package",
       "utf8"
     );
 
